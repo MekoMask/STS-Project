@@ -1,4 +1,8 @@
-if (global.state == GameState.REVIEWING_REPORT) {
+
+
+
+if (global.debug_mode) {
+	if (global.state == GameState.REVIEWING_REPORT) {
     //draw_report_ui(curr_report);
 	draw_set_colour(c_white);
 	//draw_text(100,0,curr_patient.symptoms);
@@ -7,3 +11,4 @@ if (global.state == GameState.REVIEWING_REPORT) {
 }
 
 draw_text(0,0,global.state);
+}

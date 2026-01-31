@@ -19,13 +19,18 @@ var results = inner_data.results
 var diagnosis  = results.diagnosis
 var medication = results.medication
 
-curr_report = string("Patient presents with " + string(diagnosis) + "\nand has been prescribed " + string(medication));
+var d = []
+
+array_push(d, document_elements_create("Patient presents with ",["term"],true,1));
+array_push(d, document_elements_create("string(diagnosis)",["var"],false,1));
+array_push(d, document_elements_create("and has been prescribed ",["term"],true,1));
+array_push(d, document_elements_create("string(medication)",["var"],false,1));
 
 global.state = GameState.REVIEWING_REPORT;
 
 if (!report_object_created) {
     var inst = instance_create_depth(0, 0, 0, obj_document);
-    inst.report_text = curr_report;
+    inst.report_text = d;
     report_object_created = true;
 }
 

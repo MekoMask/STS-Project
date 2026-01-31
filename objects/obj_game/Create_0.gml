@@ -247,11 +247,11 @@ function ai_generate_report(symptoms) {
 global.state = GameState.IDLE;
 
 enum GameState {
-	IDLE,
-	GENERATING_PATIENT,
-	WAITING_FOR_AI,
-	REVIEWING_REPORT,
-	RESOLVING_DECISION
+	IDLE, // The AI is not generating anything, the player is not reviewing anything
+	GENERATING_PATIENT, // The AI is generating a patient (Given the way the generation system should ideally work, this should probably be changed)
+	WAITING_FOR_AI, // Same as above
+	REVIEWING_REPORT, // The player is reviewing a report, nothing needs to be done on the AI's side
+	RESOLVING_DECISION // Whatever decision the player made is being resolved by the code. This shouldn't generally involve any AI.
 }
 	
 
