@@ -22,9 +22,9 @@ var medication = results.medication
 var d = []
 
 array_push(d, document_elements_create("Patient presents with ",["term"],true,1));
-array_push(d, document_elements_create("string(diagnosis)",["var"],false,1));
-array_push(d, document_elements_create("and has been prescribed ",["term"],true,1));
-array_push(d, document_elements_create("string(medication)",["var"],false,1));
+array_push(d, document_elements_create(string(diagnosis),["var"],false,1));
+array_push(d, document_elements_create(" and has been prescribed ",["term"],true,1));
+array_push(d, document_elements_create(string(medication),["var"],false,1));
 
 global.state = GameState.REVIEWING_REPORT;
 

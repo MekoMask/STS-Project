@@ -1,5 +1,3 @@
-
-
 // Attempt to start dragging
 if (
 	global.dragged_instance == noone &&

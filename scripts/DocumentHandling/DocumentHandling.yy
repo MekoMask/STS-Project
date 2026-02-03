@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"TextHandling",
+  "%Name":"DocumentHandling",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"TextHandling",
+  "name":"DocumentHandling",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

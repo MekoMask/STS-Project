@@ -89,3 +89,27 @@ function document_select_line(doc, line) {
 	}
 	return;
 }
+
+function document_full_draw(text, xx, yy, spacing) {
+	doc_layout(text,xx,yy,spacing);
+
+	var c = doc_line_at_mouse(text);
+
+	if keyboard_check(vk_control) {
+		if (c != -1) {
+			draw_set_color(c_white);
+			draw_rectangle(text[c].x1,text[c].y1,text[c].x2,text[c].y2,false);
+	
+			if mouse_check_button_pressed(mb_left) {
+				document_select_line(text,c);
+			}
+		}
+	}
+	for (var i = 0; i < array_length(global.lines_selected); i++) {
+		var s = global.lines_selected[i];
+		draw_set_color(c_yellow);
+		draw_rectangle(s.x1,s.y1,s.x2,s.y2,false);
+	}
+
+	document_draw(text);
+}
